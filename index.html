@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <title>Bloomy 🌷</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="day">
+
+<header class="site-header">
+  <div class="header-inner">
+
+    <div class="brand">
+      <h1 class="title">Bloomy <span>🌷</span></h1>
+      <p class="subtitle">A little garden that grows with me.</p>
+    </div>
+
+    <div class="header-actions">
+      <button id="themeToggle" class="pixel-btn small ghost" type="button">
+        <span id="themeIcon">☀️</span>
+        <span id="themeLabel">Day</span>
+      </button>
+
+      <button id="resetBtn" class="pixel-btn small danger" type="button">
+        Reset Garden
+      </button>
+    </div>
+
+  </div>
+</header>
+
+
+<section class="garden-scene" id="gardenScene">
+
+  <div class="sg-sky"></div>
+
+  <div id="stars" class="sg-stars"></div>
+
+  <div id="cloudsLayer" class="sg-clouds"></div>
+
+  <div id="celestial" class="sg-celestial"></div>
+
+  <div class="sg-hill sg-hill-back"></div>
+  <div class="sg-hill sg-hill-front"></div>
+
+  <div id="treeline" class="sg-treeline"></div>
+
+  <div id="butterfliesLayer" class="sg-butterflies"></div>
+
+  <div class="sg-grass">
+
+    <div id="ambientFlowers" class="sg-ambient"></div>
+
+    <!-- Seeds and flowers appear here -->
+    <div id="soilGrid" class="soil-grid"></div>
+
+  </div>
+
+</section>
+
+
+<main class="wrap">
+
+  <section class="stats-bar pixel-panel">
+
+    <div class="stat">
+      <span class="stat-label">Flowers</span>
+      <span class="stat-value" id="flowerCount">0</span>
+    </div>
+
+    <div class="stat">
+      <span class="stat-label">Completed</span>
+      <span class="stat-value" id="completedCount">0</span>
+    </div>
+
+    <div class="stat level-stat">
+
+      <span class="stat-label">
+        Garden Level <span id="levelValue">1</span>
+      </span>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <span class="progress-caption" id="progressCaption">
+        0 / 5 to next level
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <section class="goals-panel pixel-panel">
+
+    <h2 class="section-title">Today's Goals</h2>
+
+    <form id="goalForm" class="goal-form">
+
+      <input
+        type="text"
+        id="goalInput"
+        class="pixel-input"
+        placeholder="Type a goal..."
+        maxlength="60"
+        autocomplete="off"
+      >
+
+      <button
+        type="submit"
+        class="pixel-btn primary small"
+      >
+        Add
+      </button>
+
+    </form>
+
+    <ul class="goal-list" id="goalList"></ul>
+
+    <p class="empty-hint" id="goalEmptyHint">
+      No goals yet — plant the seed of your day 🌱
+    </p>
+
+  </section>
+
+
+  <section class="achievements-panel pixel-panel">
+
+    <h2 class="section-title">Achievements</h2>
+
+    <div class="achievements-grid" id="achievementsGrid"></div>
+
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+  <p>Made with 🌸 — your progress is saved automatically.</p>
+</footer>
+
+
+<div id="toast" class="toast"></div>
+
+
+<div id="confirmModal" class="modal-overlay hidden">
+
+  <div class="modal pixel-panel">
+
+    <p>Reset your whole garden? This cannot be undone.</p>
+
+    <div class="modal-actions">
+
+      <button id="confirmResetYes" class="pixel-btn danger small">
+        Yes, reset
+      </button>
+
+      <button id="confirmResetNo" class="pixel-btn ghost small">
+        Cancel
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
